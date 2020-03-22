@@ -8,6 +8,7 @@ import { FormGroup, FormBuilder, RequiredValidator, Validators } from '@angular/
 })
 export class RegisterComponent implements OnInit {
   userFormGroup:FormGroup;
+  user:any=[];
   constructor(private formBuilder: FormBuilder) { 
     this.userFormGroup = formBuilder.group({
       name:['',Validators.required],
@@ -25,6 +26,12 @@ export class RegisterComponent implements OnInit {
   }
   submit()
   {
+    this.user.push(this.userFormGroup)
+    this.user.forEach(element => {
+      console.log(element);
+    });
+    alert("Registeration Successfull")
+
     console.log(this.userFormGroup.value);
   }
 }
