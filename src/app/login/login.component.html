@@ -1,0 +1,41 @@
+<form [formGroup]="loginFormGroup">
+    <div class="card"style ="width:600px;height:450px;margin-left:400px;margin-top: 30px">
+    <div class="card-body" >
+        <h3>login</h3>
+
+        <div class=" from-inline" style ="text-align: center;margin-top: 10px;">
+          <button>Facebook</button>
+          <button style="margin-left: 30px;;">Google</button>
+        </div>
+        <div style ="text-align: center;margin-top: 8px;">All your activity will  remain private</div>
+        <h6 style ="text-align: center;margin-top: 20px;">or</h6>
+        <div class="inline" style="margin-top: 10px;" >
+    
+           <div class="form-group">
+         <h6>Name/Email ID</h6>
+         <input type ="text" formControlName="name" placeholder="Name" class="form-control" autofocus >
+         <div  *ngIf="loginFormGroup.controls.name.invalid && loginFormGroup.controls.name.touched" style="color:red">This field is required </div>
+       </div>
+
+       <div style="margin-top:10px ;" class="form-group">
+       <h6> Password</h6>
+       <input type ="password" formControlName="password" placeholder="Password" class="form-control" >
+       
+      <div  *ngIf="loginFormGroup.controls.password.invalid && loginFormGroup.controls.password.touched" style="color:red">This field is required </div>
+      
+      <a style="margin-top:10px;background: none;border-top: hidden;border-bottom: hidden;border-right: hidden;border-left: hidden;" routerLink="/forgot"> Forgot Password??</a>
+     </div>
+     
+       <div style="margin-top: 10px;">
+         
+                 <button type="button"(click)="submit()" class="btn btn-success" style="width: 550px;">
+                   Login</button>
+
+                   <a style="margin-top: 20px;background: none;border-top: hidden;border-bottom: hidden;border-right: hidden;border-left: hidden;" routerLink="/register">Not Register yet??</a>
+       </div>
+
+
+
+     </div></div>  </div>
+
+</form>

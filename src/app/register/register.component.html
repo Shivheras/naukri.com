@@ -1,0 +1,80 @@
+<form [formGroup]="userFormGroup">
+    <div class="card"style ="width:600px;height:650px;margin-left:400px;margin-top: 30px">
+        <div class="card-body">
+         <h3>Register here</h3>
+         <div class="inline" style="margin-top: 3px;" >
+     
+            <div class="form-group">
+          <h6>Name</h6>
+          <input type ="text" formControlName="name" placeholder="Name" class="form-control" autofocus >
+          <div  *ngIf="userFormGroup.controls.name.invalid && userFormGroup.controls.name.touched" style="color:red">This field is required </div>
+        </div>
+
+          <div style="margin-top:10px ;" class="form-group" >
+          <h6>Email ID </h6>
+          <input type ="email" formControlName="email" placeholder="Email" class="form-control" >
+          <div  *ngIf="userFormGroup.controls.email.invalid && userFormGroup.controls.email.touched" style="color:red">This field is required </div>
+        </div>
+
+          <div style="margin-top:10px ;" class="form-group">
+          <h6>Mobile Number</h6>
+          <input type ="text" formControlName="mobile" placeholder="Mobile Number" class="form-control" >     
+     <div  *ngIf="userFormGroup.controls.mobile.invalid && userFormGroup.controls.mobile.touched" style="color:red">This field is required </div>
+    </div>
+        <div style="margin-top:10px ;" class="form-group">
+        <h6>Create Password</h6>
+        <input type ="password" formControlName="password" placeholder="Create Password" class="form-control" >
+        
+       <div  *ngIf="userFormGroup.controls.password.invalid && userFormGroup.controls.password.touched" style="color:red">This field is required </div>
+    </div>
+       <div style="margin-top:10px ;"class="form-inline" >
+            <h6>Current Location</h6>
+            <div style="margin-left:20px"class="form-group">
+               
+                <select class="form-control" froemControlName="location" id="exampleFormControlSelect1">
+                    <option>select Your City</option>
+                  <option >Ahmedabad</option>
+                  <option>Surat</option>
+                  <option>Pune</option>
+                  <option>Rajkot</option>
+                  <option>Delhi</option>
+                  <option>Chennai</option>
+                  <option>Bangalore</option>
+                  
+                  </select>
+              </div>
+        </div>
+        
+           
+         
+          
+            
+            <div style="margin-top:10px ;" class="form-inline">
+                <h6>Upload Resume</h6>
+               <button style="margin-left:25px" class="btn btn-primary"> Upload Resume</button></div>
+              
+         
+            <div style="margin-top:20px" ng-app="">
+          
+                Are you Experienced?
+                <input type="checkbox" ng-model="myVar">
+                
+                <div ng-show="myVar">
+                  <h6>  How many month or year You have Experience?</h6>
+                  <input type="text" class="form-control" formControlName="experience" placeholder="Eg:1 Year/2 Month">
+                 
+                </div>
+            </div>
+        <div style="margin-top: 10px;">
+           Clicking on register you will  agreed to the Terms and Conditions governing the use of Naukri.com.
+I have reviewed the default Mailer & Communications settings.
+                  <button (click)="submit()" class="btn btn-success" style="width: 550px;margin-top: 20px;">
+                    Register Here</button>
+
+
+        </div>
+
+
+
+      </div></div></div>
+</form>
